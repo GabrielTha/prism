@@ -26,7 +26,7 @@ def download_mp3(video_url, output_path):
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
-            'preferredquality': '192',
+            'preferredquality': '320',
         }]
     }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
@@ -36,11 +36,11 @@ def download_mp3(video_url, output_path):
 def update_video_list(titles, video_urls):
     return gr.update(choices=titles, value=None), video_urls
 
-def download_selected_video(video_title, video_titles, video_urls, output_path):
+def download_selected_video(video_title, video_titles, video_urls):
     try:
         video_index = video_titles.index(video_title)
         video_url = video_urls[video_index]
-        mp3_file = download_mp3(video_url, output_path)
+        mp3_file = download_mp3(video_url, "./temp")
         return f"Downloaded MP3: {mp3_file}"
     except ValueError as e:
         return f"Error: {str(e)}"

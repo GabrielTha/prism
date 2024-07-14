@@ -89,11 +89,11 @@ def separate(state):
         print("Command failed, something went wrong.")
         
 def run_separation(state):
-    if state["source"] == "upload" and state["input_path"] != "none":
+    if state["input_path"] != "none":
         separate(state)
         return "Separation complete!", state["output_path"]
     else:
-        return "No file uploaded or file path invalid."
+        return "No file uploaded or file path invalid.", state["output_path"]
 
 def zip_output_folder(out_path):
     zip_file = make_archive(out_path, 'zip', out_path)
