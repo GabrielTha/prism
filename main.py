@@ -30,7 +30,7 @@ with gr.Blocks() as app:
         "input_path": "none", 
         "output_path": "none"
     }) 
-    
+
     # Debug Section
     with gr.Accordion("DEBUG", open=False):
         temp_size = gr.Textbox(value=get_folder_size_and_zip_count("./temp")[0], interactive=False, label="Size of Temporary Files")
@@ -65,4 +65,4 @@ with gr.Blocks() as app:
     stems_separation_tabs_ui(state)
 
 # Launch the interface
-app.launch()
+app.launch(share=True)
