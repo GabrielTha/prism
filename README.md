@@ -1,3 +1,10 @@
+
+
+<div style="text-align: center;">
+    <img src="https://i.ibb.co/mBPbgQx/prism-logo.png" alt="drawing" width="200"/>
+</div>
+
+
 # Prism App
 
 This project is a [Gradio](https://github.com/gradio-app/gradio) and [Demucs](https://github.com/facebookresearch/demucs)-based web application for extracting stems (vocals, drums, bass, etc.) from audio files. It uses the Demucs model for stem separation and integrates YouTube-DL for downloading audio directly from YouTube. The application allows users to upload audio files or provide YouTube links for processing.
